@@ -42,11 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\graph\GRPReader.cs" />
+    <Compile Include="src\graph\structure\UndirectedAdjacencyList.cs" />
+    <Compile Include="src\util\LinkList.cs" />
+    <Compile Include="src\util\LinkNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="instance\graph\undirected_sample.grp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="instance\graph\directed_sample.grp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
