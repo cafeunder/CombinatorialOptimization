@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Common.cs" />
     <Compile Include="src\graph\GRPReader.cs" />
+    <Compile Include="src\graph\structure\AdjacencyList.cs" />
+    <Compile Include="src\graph\structure\DirectedAdjacencyList.cs" />
     <Compile Include="src\graph\structure\UndirectedAdjacencyList.cs" />
     <Compile Include="src\util\LinkList.cs" />
     <Compile Include="src\util\LinkNode.cs" />

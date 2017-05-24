@@ -4,7 +4,7 @@
 	/// </summary>
 	class LinkNode {
 		// データ
-		private int data;
+		public int data { get; set; }
 		// 前のノード 無いならnull
 		public LinkNode prev { get; set; }
 		// 次のノード 無いならnull
