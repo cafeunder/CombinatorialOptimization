@@ -1,7 +1,7 @@
-﻿using System;
-using CombinatorialOptimization.src.util;
+﻿
+using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.src.graph.structure {
+namespace CombinatorialOptimization.Graph.structure {
 	/// <summary>
 	/// 無向グラフの隣接リストを表すクラス
 	/// </summary>
@@ -9,9 +9,9 @@ namespace CombinatorialOptimization.src.graph.structure {
 		private LinkList[] linkedEdgeList;
 
 		public UndirectedAdjacencyList(int nodeNum, int edgeNum, int[][] edgeList) {
-			this.nodeNum = nodeNum;
-			this.edgeNum = edgeNum;
-			this.edgeList = new int[edgeNum][];
+			this.NodeNum = nodeNum;
+			this.EdgeNum = edgeNum;
+			this.EdgeList = new int[edgeNum][];
 			this.linkedEdgeList = new LinkList[nodeNum];
 
 			// ノードごとに接続エッジリストを生成
@@ -21,9 +21,9 @@ namespace CombinatorialOptimization.src.graph.structure {
 
 			// エッジの値をコピーし、接続エッジリストにエッジIDを追加する
 			for (int i = 0; i < edgeNum; i++) {
-				this.edgeList[i] = new int[2];
-				this.edgeList[i][0] = edgeList[i][0];
-				this.edgeList[i][1] = edgeList[i][1];
+				this.EdgeList[i] = new int[2];
+				this.EdgeList[i][0] = edgeList[i][0];
+				this.EdgeList[i][1] = edgeList[i][1];
 
 				// fromのエッジリストにエッジIDを追加
 				LinkList list = this.linkedEdgeList[edgeList[i][0]];

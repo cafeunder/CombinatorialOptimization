@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using CombinatorialOptimization.src.graph.structure;
-using CombinatorialOptimization.src.util;
+using CombinatorialOptimization.Graph.structure;
+using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.src.graph {
+namespace CombinatorialOptimization.Graph {
 	/// <summary>
 	/// グラフ定義ファイル(.grp)を読み込むクラス
 	/// </summary>
@@ -35,13 +35,13 @@ namespace CombinatorialOptimization.src.graph {
 			}
 		// エッジデータの読み込み
 		READ_EDGE_DATA:
-			if (no_of_node == -1) { Common.ErrorExit(MethodBase.GetCurrentMethod().Name, "ノード数の指定がありません。"); }
-			if (no_of_edge == -1) { Common.ErrorExit(MethodBase.GetCurrentMethod().Name, "エッジ数の指定がありません。"); }
+			if (no_of_node == -1) { Common.ErrorExit("ノード数の指定がありません。"); }
+			if (no_of_edge == -1) { Common.ErrorExit("エッジ数の指定がありません。"); }
 
 			int[][] edge_list = new int[no_of_edge][];
 			for (int i = 0; i < no_of_edge; i++) {
 				if (reader.EndOfStream) {
-					Common.ErrorExit(MethodBase.GetCurrentMethod().Name, "NO_OF_EDGEで指定されたエッジ数よりも少ないデータが記載されています。");
+					Common.ErrorExit("NO_OF_EDGEで指定されたエッジ数よりも少ないデータが記載されています。");
 				}
 				string[] record = reader.ReadLine().Split(' ');
 				edge_list[i] = new int[2];
@@ -50,7 +50,7 @@ namespace CombinatorialOptimization.src.graph {
 			}
 
 			if (!reader.EndOfStream) {
-				Common.ErrorExit(MethodBase.GetCurrentMethod().Name, "NO_OF_EDGEで指定されたエッジ数よりも多いデータが記載されています。");
+				Common.ErrorExit("NO_OF_EDGEで指定されたエッジ数よりも多いデータが記載されています。");
 			}
 
 			AdjacencyList instance;
@@ -65,18 +65,18 @@ namespace CombinatorialOptimization.src.graph {
 		/// <summary>
 		/// テスト用メインメソッド
 		/// </summary>
-		public static void Main(String[] args) {
+		public static void Main(string[] args) {
 			// AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"graph\undirected_sample.grp");
 			AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"graph\directed_sample.grp");
 
-			Console.WriteLine("n : " + graph.nodeNum);
-			Console.WriteLine("m : " + graph.edgeNum);
-			foreach (int[] edge in graph.edgeList) {
+			Console.WriteLine("n : " + graph.NodeNum);
+			Console.WriteLine("m : " + graph.EdgeNum);
+			foreach (int[] edge in graph.EdgeList) {
 				Console.WriteLine(edge[0] + "," + edge[1]);
 			}
 
 			Console.WriteLine("\n===== in =====");
-			for (int i = 0; i < graph.nodeNum; i++) {
+			for (int i = 0; i < graph.NodeNum; i++) {
 				Console.WriteLine("===" + i + "===");
 				for (LinkNode node = graph.GetInLinkedEdgeList(i).head; node != null; node = node.next) {
 					Console.WriteLine(node.data);
@@ -84,7 +84,7 @@ namespace CombinatorialOptimization.src.graph {
 			}
 
 			Console.WriteLine("\n===== out =====");
-			for (int i = 0; i < graph.nodeNum; i++) {
+			for (int i = 0; i < graph.NodeNum; i++) {
 				Console.WriteLine("===" + i + "===");
 				for (LinkNode node = graph.GetOutLinkedEdgeList(i).head; node != null; node = node.next) {
 					Console.WriteLine(node.data);

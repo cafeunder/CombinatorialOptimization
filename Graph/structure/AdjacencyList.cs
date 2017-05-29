@@ -1,16 +1,17 @@
-﻿using CombinatorialOptimization.src.util;
+﻿
+using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.src.graph.structure {
+namespace CombinatorialOptimization.Graph.structure {
 	/// <summary>
 	/// 隣接リストを表す抽象クラス
 	/// </summary>
 	abstract class AdjacencyList {
 		// ノードの個数
-		public int nodeNum { get; set; }
+		public int NodeNum { get; set; }
 		// エッジの個数
-		public int edgeNum { get; set; }
+		public int EdgeNum { get; set; }
 		// エッジの配列
-		public int[][] edgeList { get; set; }
+		public int[][] EdgeList { get; set; }
 
 		/// <summary>
 		/// nodeに入るエッジのリンクリストを返す。

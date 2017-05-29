@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinatorialOptimization", "CombinatorialOptimization\CombinatorialOptimization.csproj", "{08C9A0A4-54E7-4453-B25A-ABCCAEAFB7BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{746150CB-6FA7-4F2B-B6AC-5B0AA82625E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{08C9A0A4-54E7-4453-B25A-ABCCAEAFB7BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{746150CB-6FA7-4F2B-B6AC-5B0AA82625E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746150CB-6FA7-4F2B-B6AC-5B0AA82625E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746150CB-6FA7-4F2B-B6AC-5B0AA82625E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746150CB-6FA7-4F2B-B6AC-5B0AA82625E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08C9A0A4-54E7-4453-B25A-ABCCAEAFB7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08C9A0A4-54E7-4453-B25A-ABCCAEAFB7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C9A0A4-54E7-4453-B25A-ABCCAEAFB7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU

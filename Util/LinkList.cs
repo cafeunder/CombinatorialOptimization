@@ -1,8 +1,8 @@
-﻿namespace CombinatorialOptimization.src.util {
+﻿namespace CombinatorialOptimization.Util {
 	/// <summary>
 	/// リンクリストを表すクラス
 	/// </summary>
-	class LinkList {
+	public class LinkList {
 		// リストの先頭のノード
 		public LinkNode head { get; set; }
 		// リストの末尾のノード
