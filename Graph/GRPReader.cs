@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using CombinatorialOptimization.Graph.structure;
 using CombinatorialOptimization.Util;
 
@@ -9,7 +8,7 @@ namespace CombinatorialOptimization.Graph {
 	/// グラフ定義ファイル(.grp)を読み込むクラス
 	/// </summary>
 	class GRPReader {
-		static AdjacencyList ReadGraph(string filepath) {
+		public static AdjacencyList ReadGraph(string filepath) {
 			StreamReader reader = new StreamReader(filepath);
 
 			int no_of_node = -1;
@@ -66,8 +65,8 @@ namespace CombinatorialOptimization.Graph {
 		/// テスト用メインメソッド
 		/// </summary>
 		public static void Main(string[] args) {
-			// AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"graph\undirected_sample.grp");
-			AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"graph\directed_sample.grp");
+			// AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"undirected_sample.grp");
+			AdjacencyList graph = ReadGraph(Common.INSTANCE_PATH + @"directed_sample.grp");
 
 			Console.WriteLine("n : " + graph.NodeNum);
 			Console.WriteLine("m : " + graph.EdgeNum);
