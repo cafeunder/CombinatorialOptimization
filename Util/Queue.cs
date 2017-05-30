@@ -13,7 +13,7 @@ namespace CombinatorialOptimization.Util {
 		// バッファ
 		private int[] buffer;
 		// バッファに格納されているデータの数
-		public int Count { get; set; }
+		public int Count { get; private set; }
 
 		public Queue(int bufferSize = 10) {
 			this.head = 0;
@@ -27,7 +27,7 @@ namespace CombinatorialOptimization.Util {
 		/// </summary>
 		/// <param name="data">データ</param>
 		public int Enqueue(int data) {
-			// head == tailなら、bufferが満杯
+			// データの数がバッファを超えたら
 			if (this.Count >= this.buffer.Length) {
 				// サイズ = 現在のサイズ / 2にしてbufferを作り直す
 				int[] temp = new int[this.buffer.Length + (this.buffer.Length / 2 + 1)];

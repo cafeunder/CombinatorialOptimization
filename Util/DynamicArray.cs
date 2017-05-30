@@ -5,7 +5,7 @@
 		// バッファ
 		private int[] buffer;
 		// バッファに格納されているデータの数
-		public int Count { get; set; }
+		public int Count { get; private set; }
 
 		public DynamicArray(int bufferSize = 10) {
 			this.tail = 0;

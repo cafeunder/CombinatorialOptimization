@@ -11,7 +11,7 @@ namespace CombinatorialOptimization.Util {
 		private const int NULL = int.MinValue;
 		private int size;
 		private int[] table;
-		public int Count { get; set; }
+		public int Count { get; private set; }
 
 		/// <summary>
 		/// コンストラクタ。
