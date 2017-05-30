@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CombinatorialOptimization.Util {
-	class Stack {
+	public class Stack {
 		// 次にpopされる位置
 		private int top;
 		// バッファ

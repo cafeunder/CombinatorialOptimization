@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="instance\tree_sample.grp" />
     <None Include="instance\2group_sample.grp" />
     <None Include="instance\undirected_sample.grp" />
   </ItemGroup>
