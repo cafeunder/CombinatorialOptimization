@@ -7,11 +7,13 @@ namespace CombinatorialOptimization.Graph.structure {
 	/// </summary>
 	abstract class AdjacencyList {
 		// ノードの個数
-		public int NodeNum { get; set; }
+		public int NodeNum { get; protected set; }
 		// エッジの個数
-		public int EdgeNum { get; set; }
+		public int EdgeNum { get; protected set; }
 		// エッジの配列
-		public int[][] EdgeList { get; set; }
+		public int[][] EdgeList { get; protected set; }
+		// 有向グラフか？
+		public abstract bool IsDirected { get; protected set; }
 
 		/// <summary>
 		/// nodeに入るエッジのリンクリストを返す。
@@ -28,11 +30,5 @@ namespace CombinatorialOptimization.Graph.structure {
 		/// <param name="node">ノードID</param>
 		/// <returns>nodeから出るエッジのリンクリスト</returns>
 		public abstract LinkList GetOutLinkedEdgeList(int node); 
-
-		/// <summary>
-		/// 有向グラフかどうかを返す
-		/// </summary>
-		/// <returns>有向グラフか？</returns>
-		public abstract bool IsDirected();
 	}
 }

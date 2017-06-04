@@ -93,6 +93,15 @@ namespace CombinatorialOptimization.Util {
 		}
 
 		/// <summary>
+		/// データを全て破棄する
+		/// </summary>
+		public void Clear() {
+			this.head = 0;
+			this.tail = -1; 
+			this.Count = 0;
+		}
+
+		/// <summary>
 		/// データがあるなら次にデキューされるデータを確認する
 		/// </summary>
 		/// <param name="data">次にデキューされるデータを格納するout変数</param>

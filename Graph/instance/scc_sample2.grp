@@ -1,0 +1,20 @@
+﻿NO_OF_NODE : 9
+NO_OF_EDGE : 15
+TYPE : DIRECTED
+COMMENT : The ID of the node starts from 0
+EDGE_CODE_SECTION
+0 6
+1 0
+2 6
+2 3
+3 4
+4 3
+5 0
+5 4
+6 1
+6 3
+6 4
+6 5
+2 7
+7 8
+8 2

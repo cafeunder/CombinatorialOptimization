@@ -32,11 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CombinatorialOptimization.Graph.graphScanning.GraphScanning</StartupObject>
+    <StartupObject>CombinatorialOptimization.Graph.stronglyConnectedComponent.StronglyConnectedComponent</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,15 +52,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="graphScanning\GraphScanning.cs" />
     <Compile Include="GRPReader.cs" />
+    <Compile Include="stronglyConnectedComponent\StronglyConnectedComponent.cs" />
     <Compile Include="structure\AdjacencyList.cs" />
     <Compile Include="structure\DirectedAdjacencyList.cs" />
     <Compile Include="structure\UndirectedAdjacencyList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="instance\scc_sample2.grp" />
+    <None Include="instance\scc_sample.grp" />
     <None Include="instance\tree_sample.grp" />
     <None Include="instance\2group_sample.grp" />
     <None Include="instance\undirected_sample.grp" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="instance\directed_sample.grp" />

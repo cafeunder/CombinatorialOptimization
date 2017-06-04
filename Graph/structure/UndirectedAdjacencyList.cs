@@ -7,6 +7,7 @@ namespace CombinatorialOptimization.Graph.structure {
 	/// </summary>
 	class UndirectedAdjacencyList : AdjacencyList {
 		private LinkList[] linkedEdgeList;
+		public override bool IsDirected { get { return false; } protected set { } }
 
 		public UndirectedAdjacencyList(int nodeNum, int edgeNum, int[][] edgeList) {
 			this.NodeNum = nodeNum;
@@ -40,9 +41,6 @@ namespace CombinatorialOptimization.Graph.structure {
 		}
 		public override LinkList GetOutLinkedEdgeList(int node) {
 			return this.linkedEdgeList[node];
-		}
-		public override bool IsDirected() {
-			return false;
 		}
 	}
 }

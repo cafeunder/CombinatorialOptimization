@@ -92,6 +92,13 @@ namespace CombinatorialOptimization.Util {
 			return true;
 		}
 
+		/// <summary>
+		/// データを全て破棄する
+		/// </summary>
+		public void Clear() {
+			this.top = -1;
+		}
+
 		public static void Main(string[] args) {
 			Stack stack = new Stack(2);
 
