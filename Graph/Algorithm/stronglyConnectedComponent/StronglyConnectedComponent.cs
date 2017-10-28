@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CombinatorialOptimization.Graph.structure;
+using CombinatorialOptimization.Graph.Structure;
 using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.Graph.stronglyConnectedComponent {
+namespace CombinatorialOptimization.Graph.Algorithm.stronglyConnectedComponent {
 	class StronglyConnectedComponent {
 		private const int UNVISITED = -1;
 		private const int VISITED = -2;
@@ -23,7 +19,7 @@ namespace CombinatorialOptimization.Graph.stronglyConnectedComponent {
 			for (int i = 0; i < graph.NodeNum; i++) { order_array[i] = UNVISITED; }
 
 			int order = 0;
-			Stack visit_stack = new Stack(graph.NodeNum);
+			Stack<int> visit_stack = new Stack<int>(graph.NodeNum);
 			for (int i = 0; i < graph.NodeNum; i++) {
 				// 未訪問のノードから始める
 				if (order_array[i] != UNVISITED) { continue; }
@@ -70,7 +66,7 @@ namespace CombinatorialOptimization.Graph.stronglyConnectedComponent {
 			for (int i = 0; i < result.Length; i++) { result[i] = UNVISITED; }
 
 			int cluster_id = 0;
-			Stack visit_stack = new Stack(graph.NodeNum);
+			Stack<int> visit_stack = new Stack<int>(graph.NodeNum);
 			for (int i = 0; i < graph.NodeNum; i++) {
 				// i番目に大きい訪問順を持つノードから始める
 				int s = invOrderArray[(graph.NodeNum - 1) - i];

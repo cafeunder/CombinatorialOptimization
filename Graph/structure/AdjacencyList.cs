@@ -1,7 +1,7 @@
 ﻿
 using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.Graph.structure {
+namespace CombinatorialOptimization.Graph.Structure {
 	/// <summary>
 	/// 隣接リストを表す抽象クラス
 	/// </summary>

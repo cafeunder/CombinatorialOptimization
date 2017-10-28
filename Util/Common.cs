@@ -2,7 +2,7 @@
 
 namespace CombinatorialOptimization.Util {
 	public class Common {
-		public const string INSTANCE_PATH = @"..\..\instance\";
+		public const string INSTANCE_PATH = @"..\..\Instance\";
 
 		/// <summary>
 		/// エラーメッセージを出力してプログラムを終了する

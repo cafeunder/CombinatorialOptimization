@@ -1,8 +1,8 @@
 ﻿using System;
-using CombinatorialOptimization.Graph.structure;
+using CombinatorialOptimization.Graph.Structure;
 using CombinatorialOptimization.Util;
 
-namespace CombinatorialOptimization.Graph.graphScanning {
+namespace CombinatorialOptimization.Graph.Algorithm.graphScanning {
 	class GraphScanning {
 		/// <summary>
 		/// 入力されたgraphにおける、nodeIdから到達可能なノードを返すメソッド。
@@ -15,7 +15,7 @@ namespace CombinatorialOptimization.Graph.graphScanning {
 			// 作業領域を確保
 			HashTable results = new HashTable(
 				(graph.NodeNum < int.MaxValue / 10) ? graph.NodeNum * 10 : graph.NodeNum);
-			Stack nodeS = new Stack(graph.NodeNum);
+			Stack<int> nodeS = new Stack<int>(graph.NodeNum);
 			bool[] visited = new bool[graph.NodeNum];
 
 			// 初期化

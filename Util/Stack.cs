@@ -1,28 +1,28 @@
 ﻿using System;
 
 namespace CombinatorialOptimization.Util {
-	public class Stack {
+	public class Stack<Type> {
 		// 次にpopされる位置
 		private int top;
 		// バッファ
-		private int[] buffer;
+		private Type[] buffer;
 		// バッファに格納されているデータの数
 		public int Count { get { return this.top + 1;} }
 
 		public Stack(int bufferSize = 10) {
 			this.top = -1;
-			this.buffer = new int[bufferSize];
+			this.buffer = new Type[bufferSize];
 		}
 
 		/// <summary>
 		/// データをプッシュする
 		/// </summary>
 		/// <param name="data">データ</param>
-		public int Push(int data) {
+		public Type Push(Type data) {
 			// データの数がバッファを超えたら
 			if (this.Count >= this.buffer.Length) {
 				// サイズ = 現在のサイズ / 2にしてbufferを作り直す
-				int[] temp = new int[this.buffer.Length + (this.buffer.Length / 2 + 1)];
+				Type[] temp = new Type[this.buffer.Length + (this.buffer.Length / 2 + 1)];
 				// 値をコピー
 				for (int i = 0; i < this.buffer.Length; i++) {
 					temp[i] = this.buffer[i];
@@ -40,11 +40,11 @@ namespace CombinatorialOptimization.Util {
 		/// データをポップする
 		/// </summary>
 		/// <returns>データ</returns>
-		public int Pop() {
+		public Type Pop() {
 			if (this.Count == 0) {
 				Common.ErrorExit("データの個数が0のときにPop()が呼び出されました。");
 			}
-			int result = this.buffer[this.top];
+			Type result = this.buffer[this.top];
 			this.top--;
 			return result;
 		}
@@ -54,9 +54,9 @@ namespace CombinatorialOptimization.Util {
 		/// </summary>
 		/// <param name="data">データを格納するout変数</param>
 		/// <returns>データがあるか？</returns>
-		public bool CheckPop(out int data) {
+		public bool CheckPop(out Type data) {
 			if (this.Count == 0) {
-				data = -1;
+				data = default(Type);
 				return false;
 			}
 
@@ -69,7 +69,7 @@ namespace CombinatorialOptimization.Util {
 		/// 次にポップされるデータを確認する
 		/// </summary>
 		/// <returns>次にポップされるデータ</returns>
-		public int Peak() {
+		public Type Peak() {
 			if (this.Count == 0) {
 				Common.ErrorExit("データの個数が0のときにPeak()が呼び出されました。");
 			}
@@ -82,9 +82,9 @@ namespace CombinatorialOptimization.Util {
 		/// </summary>
 		/// <param name="data">次にデキューされるデータを格納するout変数</param>
 		/// <returns>データがあるか？</returns>
-		public bool CheckPeak(out int data) {
+		public bool CheckPeak(out Type data) {
 			if (this.Count == 0) {
-				data = -1;
+				data = default(Type);
 				return false;
 			}
 
@@ -100,7 +100,7 @@ namespace CombinatorialOptimization.Util {
 		}
 
 		public static void Main(string[] args) {
-			Stack stack = new Stack(2);
+			Stack<int> stack = new Stack<int>(2);
 
 			stack.Push(1);
 			foreach (int i in stack.buffer) { Console.Write(i + ","); }

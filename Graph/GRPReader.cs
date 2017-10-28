@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using CombinatorialOptimization.Graph.structure;
+using CombinatorialOptimization.Graph.Structure;
 using CombinatorialOptimization.Util;
 
 namespace CombinatorialOptimization.Graph {
