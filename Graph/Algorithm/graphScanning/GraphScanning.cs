@@ -54,7 +54,7 @@ namespace CombinatorialOptimization.Graph.Algorithm.graphScanning {
 			// 作業領域を確保
 			HashTable results = new HashTable(
 				(graph.NodeNum < int.MaxValue / 10) ? graph.NodeNum * 10 : graph.NodeNum);
-			Queue nodeQ = new Queue(graph.NodeNum);
+			Queue<int> nodeQ = new Queue<int>(graph.NodeNum);
 			bool[] visited = new bool[graph.NodeNum];
 
 			// 初期化

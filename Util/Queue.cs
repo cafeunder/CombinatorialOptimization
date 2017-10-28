@@ -5,13 +5,13 @@ namespace CombinatorialOptimization.Util {
 	/// <summary>
 	/// キューを表すクラス
 	/// </summary>
-	public class Queue {
+	public class Queue<Type> {
 		// 次にデキューされる位置
 		private int head;
 		// 最後にエンキューした位置
 		private int tail;
 		// バッファ
-		private int[] buffer;
+		private Type[] buffer;
 		// バッファに格納されているデータの数
 		public int Count { get; private set; }
 
@@ -19,18 +19,18 @@ namespace CombinatorialOptimization.Util {
 			this.head = 0;
 			this.tail = -1; 
 			this.Count = 0;
-			this.buffer = new int[bufferSize];
+			this.buffer = new Type[bufferSize];
 		}
 
 		/// <summary>
 		/// データをエンキューする
 		/// </summary>
 		/// <param name="data">データ</param>
-		public int Enqueue(int data) {
+		public Type Enqueue(Type data) {
 			// データの数がバッファを超えたら
 			if (this.Count >= this.buffer.Length) {
 				// サイズ = 現在のサイズ / 2にしてbufferを作り直す
-				int[] temp = new int[this.buffer.Length + (this.buffer.Length / 2 + 1)];
+				Type[] temp = new Type[this.buffer.Length + (this.buffer.Length / 2 + 1)];
 				// 値をコピー
 				for (int i = 0; i < this.buffer.Length; i++) {
 					temp[i] = this.buffer[(this.head + i) % this.buffer.Length];
@@ -53,12 +53,12 @@ namespace CombinatorialOptimization.Util {
 		/// データをデキューする
 		/// </summary>
 		/// <returns>データ</returns>
-		public int Dequeue() {
+		public Type Dequeue() {
 			if (this.Count == 0) {
 				Common.ErrorExit("データの個数が0のときにDequeue()が呼び出されました。");
 			}
 
-			int result = this.buffer[this.head];
+			Type result = this.buffer[this.head];
 			this.head = (this.head + 1) % this.buffer.Length;
 			this.Count--;
 			return result;
@@ -69,7 +69,7 @@ namespace CombinatorialOptimization.Util {
 		/// </summary>
 		/// <param name="data">データを格納するout変数</param>
 		/// <returns>データがあるか？</returns>
-		public bool CheckDequeue(out int data) {
+		public bool CheckDequeue(out Type data) {
 			data = this.buffer[this.head];
 			if (this.Count == 0) {
 				return false;
@@ -84,7 +84,7 @@ namespace CombinatorialOptimization.Util {
 		/// 次にデキューされるデータを確認する
 		/// </summary>
 		/// <returns>次にデキューされるデータ</returns>
-		public int Peak() {
+		public Type Peak() {
 			if (this.Count == 0) {
 				Common.ErrorExit("データの個数が0のときにPeak()が呼び出されました。");
 			}
@@ -106,7 +106,7 @@ namespace CombinatorialOptimization.Util {
 		/// </summary>
 		/// <param name="data">次にデキューされるデータを格納するout変数</param>
 		/// <returns>データがあるか？</returns>
-		public bool CheckPeak(out int data) {
+		public bool CheckPeak(out Type data) {
 			data = this.buffer[this.head];
 			if (this.Count == 0) {
 				return false;
